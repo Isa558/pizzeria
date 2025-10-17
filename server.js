@@ -1,12 +1,13 @@
 // server.js
-const express = require("express");
+const express = require('express');
 const app = express();
-const PORT = 3000;
 
-app.get("/", (req, res) => {
-  res.send("🍕 Servidor de pizzería funcionando correctamente!");
-});
+// ✅ Importa la conexión para que se ejecute al iniciar
+require('./js/conexionbd');
 
-app.listen(PORT, () => {
-  console.log(`Servidor iniciado en http://localhost:${PORT}`);
+
+app.use(express.json());
+
+app.listen(3000, () => {
+  console.log('Servidor iniciado en http://localhost:3000');
 });

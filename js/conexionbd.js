@@ -3,14 +3,17 @@ const mysql = require('mysql2');
 const conexion = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'root',  // 👈 pon tu contraseña real de MySQL
-  database: 'prontopizza',
+  password: 'root', 
+  database: 'prontopizza'
 });
 
-conexion.connect((err) => {
-  if (err) {
-    console.error('❌ Error al conectar a la base de datos:', err);
+// Probar conexión
+conexion.connect((error) => {
+  if (error) {
+    console.error('❌ Error al conectar a la base de datos:', error);
     return;
   }
-  console.log('✅ Conexión exitosa a MySQL');
+  console.log('✅ Conexión a MySQL establecida correctamente');
 });
+
+module.exports = conexion;
