@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 
-// ✅ Importa la conexión para que se ejecute al iniciar
+
 require('./js/conexionbd');
 
 

@@ -7,7 +7,7 @@ const conexion = mysql.createConnection({
   database: 'prontopizza'
 });
 
-// Probar conexión
+
 conexion.connect((error) => {
   if (error) {
     console.error(' Error al conectar a la base de datos:', error);
